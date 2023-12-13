@@ -71,9 +71,3 @@ jobs:
         export ASEPRITE=$PWD/build/bin/aseprite
         cd tests
         $XVFB bash run-tests.sh
-         - name: Upload Artifacts
-      uses: actions/upload-artifact@v3
-      if: success()
-      with:
-        name: compiled-files-${{ matrix.os }}-${{ matrix.build_type }}-${{ matrix.enable_ui }}
-        path: build/*
